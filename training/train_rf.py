@@ -21,7 +21,7 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
 
-clf = RandomForestClassifier(min_samples_leaf=2,n_estimators=149, random_state=42)
+clf = RandomForestClassifier(min_samples_leaf=3,n_estimators=124, random_state=42)
 clf.fit(X_train_scaled, y_train)
 
 

@@ -23,7 +23,7 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
 
-dtc = DecisionTreeClassifier(criterion='entropy',max_depth=30,min_samples_split=40, min_samples_leaf=60,random_state=42)
+dtc = DecisionTreeClassifier(criterion='entropy',max_depth=20,min_samples_split=20, min_samples_leaf=60,random_state=42)
 dtc.fit(X_train_scaled, y_train)
 
 os.makedirs('models', exist_ok=True)
