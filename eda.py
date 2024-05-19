@@ -119,8 +119,9 @@ def correlation():
 
 # histogramModes()
 # histogramKeys()           #call functions as desired
-boxPlotFeatures('speechiness')  #pass the desired feature for box plot
-boxPlotFeatures('liveness')  #pass the desired feature for box plot
+# histogramTimeSignatures()           #call functions as desired
+# boxPlotFeatures('liveness')  #pass the desired feature for box plot
+correlation()
 
 
 
