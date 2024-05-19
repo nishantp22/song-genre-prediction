@@ -2,7 +2,7 @@ import joblib
 import os
 # from django.shortcuts import render
 from django.http import JsonResponse
-# from django.http import HttpResponse
+from django.http import HttpResponse
 import pandas as pd
 
 MODEL_PATH = os.path.join(os.path.dirname(__file__), 'genre_classifier_rf.pkl')
@@ -12,7 +12,10 @@ clf_loaded = model_loaded['model']
 label_encoder_loaded = model_loaded['label_encoder']
 scaler_loaded = model_loaded['scaler']
 
-def hello(request):
+def index(request):
+    return HttpResponse("Hello, world. This is the index view.")
+
+def predict(request):
     output=""
     try:
         data={
@@ -42,4 +45,4 @@ def hello(request):
     return JsonResponse({'genre':output})
 
 
-#http://127.0.0.1:8000/genreApp/hello/?danceability=0.41&energy=0.65&acousticness=0.22&speechiness=0.21&instrumentalness=0.55&tempo=120&valence=0.43&duration=12400
+#http://127.0.0.1:8000/genreApp/predict/?danceability=0.41&energy=0.65&acousticness=0.22&speechiness=0.21&instrumentalness=0.55&tempo=120&valence=0.43&duration=12400
