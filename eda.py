@@ -93,31 +93,34 @@ def histogramTimeSignatures():
 
 
 #box plots for various features for different genres.
-def boxPlotForFeatures():
+def boxPlotFeatures(feature):               # pass the y feature as argument
     sns.set_theme(style="ticks")
 
     colors = sns.color_palette("pastel")
 
     plt.figure(figsize=(12, 8))
-    sns.boxplot(x='genre', y='danceability', data=df, palette=colors)  # adjust the y feature as desired
-    plt.title('Distribution of Danceability for Each Genre', fontsize=16, fontweight='bold')
+    sns.boxplot(x='genre', y=feature, data=df, palette=colors)  
+    plt.title(f'Distribution of {feature} for Each Genre', fontsize=16, fontweight='bold')
     plt.xlabel('Genre', fontsize=14)
-    plt.ylabel('Danceability', fontsize=14)
+    plt.ylabel(feature, fontsize=14)
     plt.xticks(rotation=45, ha='right', fontsize=12)
     plt.yticks(fontsize=12)
     plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.tight_layout()
     plt.show()
 
-    # correlation matrix
+# correlation matrix
+def correlation():
     correlation_matrix = df[features].corr()
     plt.figure(figsize=(10, 8))
     sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f", linewidths=0.5)
     plt.title('Correlation Matrix')
     plt.show()
 
-histogramModes()
+# histogramModes()
 # histogramKeys()           #call functions as desired
+boxPlotFeatures('speechiness')  #pass the desired feature for box plot
+boxPlotFeatures('liveness')  #pass the desired feature for box plot
 
 
 
