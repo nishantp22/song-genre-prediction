@@ -2,11 +2,10 @@ import joblib
 import pandas as pd
 
 single_input = {            #example feature set, change accordingly
-    'danceability': 0.9,
+    'danceability': 0.2,
     'energy': 0.3,
-    'loudness': -12.0,
-    'speechiness': 0.1,
-    'acousticness': 0.2,
+    'speechiness': 0.,
+    'acousticness': 0.8,
     'instrumentalness': 0.7,
     'valence': 0.3,
     'tempo': 120.0,
@@ -15,7 +14,7 @@ single_input = {            #example feature set, change accordingly
 
 single_input_df = pd.DataFrame([single_input])
 
-model_loaded = joblib.load('models/genre_classifier_knn.pkl') #change the suffix to knn or dt accordingly
+model_loaded = joblib.load('models/genre_classifier_rf.pkl') #change the suffix to knn or dt accordingly
 
 clf_loaded = model_loaded['model']
 label_encoder_loaded = model_loaded['label_encoder']
