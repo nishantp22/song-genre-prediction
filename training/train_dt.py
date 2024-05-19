@@ -9,7 +9,7 @@ import os
 df=pd.read_csv('datasets/dataset.csv')
 
 
-features = ['danceability', 'energy', 'loudness', 'speechiness', 'acousticness', 'instrumentalness', 'valence', 'tempo', 'duration_ms']
+features = ['danceability', 'energy', 'speechiness', 'acousticness', 'instrumentalness', 'valence', 'tempo', 'duration_ms']
 X = df[features]
 y = df['genre']
 

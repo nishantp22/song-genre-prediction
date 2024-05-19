@@ -7,7 +7,7 @@ import os
 
 df=pd.read_csv('datasets/dataset.csv')
 
-features = ['danceability', 'energy','loudness', 'speechiness', 'acousticness', 'instrumentalness', 'valence', 'tempo', 'duration_ms']
+features = ['danceability', 'energy', 'speechiness', 'acousticness', 'instrumentalness', 'valence', 'tempo', 'duration_ms']
 X = df[features]
 y = df['genre']
 
@@ -21,7 +21,7 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
 
-clf = RandomForestClassifier(n_estimators=181, random_state=42)
+clf = RandomForestClassifier(min_samples_leaf=2,n_estimators=149, random_state=42)
 clf.fit(X_train_scaled, y_train)
 
 
