@@ -51,10 +51,10 @@ Data from the dataset has been analyzed thoroughly. Some key observations that a
 
 ### Implementation of Machine Learning/Deep Learning
 Based on the dataset, and the features that we have extracted, we try to incorporate various ML/DL methods, to predict the genre of a song. The methods that are used are:
-* <b>Decision Tree Classifier<b> : With the hyperparamters as- Criterion = Entropy, Maximum Depth = 60, Minimum Samples per Split = 20 and Minimum Samples per Leaf = 60
-* <b>K Nearest Neighbour Classifier<b>: With the Number of Neighbours parameter set to 22
-* <b>Random Forest Classifier<b> : With the hyperparamters as- Minimum Samples per Leaf = 2, Number of Trees(n_estimate) = 149
-* <b>Aritifical Neural Network<b> : Implemented using TensorFlow, with 2 Hidden Layers, having 216 and 128 neurons respectively. The output layer has Softmax activation function. Adam optimizer is used with a learning rate of 0.001.
+* <b>Decision Tree Classifier</b> : With the hyperparamters as- Criterion = Entropy, Maximum Depth = 60, Minimum Samples per Split = 20 and Minimum Samples per Leaf = 60
+* <b>K Nearest Neighbour Classifier</b>: With the Number of Neighbours parameter set to 22
+* <b>Random Forest Classifier</b> : With the hyperparamters as- Minimum Samples per Leaf = 2, Number of Trees(n_estimate) = 149
+* <b>Aritifical Neural Network</b> : Implemented using TensorFlow, with 2 Hidden Layers, having 216 and 128 neurons respectively. The output layer has Softmax activation function. Adam optimizer is used with a learning rate of 0.001.
 
 ### Results
 For Decision Tree Classifier : Overall F1 Score : **0.66**			
