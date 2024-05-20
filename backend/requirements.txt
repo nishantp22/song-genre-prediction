@@ -2,3 +2,4 @@ django
 joblib
 pandas
 scikit-learn
+django-cors-headers
