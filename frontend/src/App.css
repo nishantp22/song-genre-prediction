@@ -1,0 +1,112 @@
+.App {
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  margin: 20px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.questionsDiv{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#heading{
+  font-size: 100px;
+  font-family: "Quicksand", sans-serif;
+  /* text-shadow: 0 0 10px #fff, 0 0 30px #fff, 0 0 10px #0b6bcb; */
+}
+#secondHeading{
+  font-size: 40px;
+  font-family: "Quicksand", sans-serif;
+}
+.MuiSlider-markLabel{
+  /* width: 200px !important; */
+  font-family: "Quicksand", sans-serif !important;
+  /* font-family: ; */
+  /* color:white !important; */
+}
+.questions{
+  font-size: 20px;
+}
+#submitButton{
+  margin-top: 20px;
+  width:300px;
+  font-size: 20px;
+}
+@media screen and (max-width: 750px) {
+  /* body { */
+    .MuiSlider-root{
+      width: 300px !important;
+    }
+    .MuiBox-root{
+      width: 300px !important;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    /* body { */
+      #heading{
+        font-size: 80px;
+      }
+    }
+#modal-desc{
+  /* width: 100%; */
+  font-size: 20px;
+  font-family: "Quicksand", sans-serif !important;
+  /* background-color: black !important; */
+}
+#modal-desc-s{
+  /* width: 100%; */
+  margin-top: 10px;
+  font-size: 18px;
+  font-family: "Quicksand", sans-serif !important;
+  /* background-color: black !important; */
+}
+#modal-title{
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 30px;
+  font-family: "Quicksand", sans-serif !important;
+  
+}
+#modal{
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+}
