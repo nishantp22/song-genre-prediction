@@ -105,5 +105,7 @@ For Artificial Neural Network : Overall F1 Score : **0.71**
 * Run corresponding files in `training` folder to train the dataset over different methods.
 * Run files in the `prediction` folder to reproduce prediction results. 
 
+### Bonus
 
+I have also developed a Web-App using Django and React, where the users can answer simple questions and get a genre predicted according to their taste.
 
