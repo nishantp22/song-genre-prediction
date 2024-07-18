@@ -1,15 +1,13 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
-from sklearn.feature_selection import mutual_info_classif
-from sklearn.model_selection import train_test_split
 
 df=pd.read_csv('datasets/dataset.csv')
 features = ['danceability', 'energy', 'loudness', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo', 'duration_ms']
 # df = df[features]
 
 
-#histogram for modes
+#histogram for modes - major/minor
 def histogramModes():
     grouped = df.groupby(['genre', 'mode']).size().unstack(fill_value=0)
 
@@ -34,23 +32,22 @@ def histogramModes():
 
 
 
-# histogram for keys
+# histogram for keys - c,c#....and so on
 def histogramKeys():
     grouped_key = df.groupby(['genre', 'key']).size().unstack(fill_value=0)
 
     fig, ax = plt.subplots(figsize=(10, 6))
 
     total_keys = len(grouped_key.columns)
-    bar_width = 0.8 / total_keys  # Adjust this value for spacing between bars
-
-    # Set the positions for the bars
+    bar_width = 0.8 / total_keys  
+    
     positions_key = range(len(grouped_key.index))
 
-    # Plot bars for each key
+    
     for i, key in enumerate(grouped_key.columns):
         ax.bar([p + (i * bar_width) for p in positions_key], grouped_key[key], bar_width, label=key)
 
-    # Set labels and title for key plot
+   
     ax.set_xlabel('Genre')
     ax.set_ylabel('Frequency')
     ax.set_title('Frequency of Keys for Each Genre')
