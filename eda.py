@@ -3,7 +3,6 @@ import seaborn as sns
 import pandas as pd
 from sklearn.feature_selection import mutual_info_classif
 from sklearn.model_selection import train_test_split
-import joblib
 
 df=pd.read_csv('datasets/dataset.csv')
 features = ['danceability', 'energy', 'loudness', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo', 'duration_ms']
