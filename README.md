@@ -12,7 +12,7 @@ The objective of this project is to predict the genre of songs using machine lea
 <li> <b>Pandas/Matplotlib/Seaborn</b> : Python Libraries for Data Analysis and processing.
 
 ### Data Collection and Compilation
-A dataset of more than 40,000 songs from 5 major genres that are popular in India, namely <b>Hip-hop/Pop, Rock/Meta, Classical/Acoustic, Dance/EDM</b> and <b>Indian/Bollywood</b> has been compiled (About 8000 songs per genre). This dataset contains audio features such as <b>danceability, energy, key
+A dataset of more than 40,000 songs from 5 major genres that are popular in India, namely <b>Hip-Hop/Pop, Rock/Metal, Classical/Acoustic, Dance/EDM</b> and <b>Indian/Bollywood</b> has been compiled (About 8000 songs per genre). This dataset contains audio features such as <b>danceability, energy, key
 loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo, duration(in milliseconds), time signature</b> and the <b>genre</b> of each song.
 
 
