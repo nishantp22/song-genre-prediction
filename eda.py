@@ -9,23 +9,14 @@ features = ['danceability', 'energy', 'loudness', 'speechiness', 'acousticness',
 
 #histogram for modes - major/minor
 def histogramModes():
-    grouped = df.groupby(['genre', 'mode']).size().unstack(fill_value=0)
-
-    fig, ax = plt.subplots(figsize=(10, 6))
-
-    bar_width = 0.35
-    positions = range(len(grouped.index))
-
-    for i, mode in enumerate(grouped.columns):
-        ax.bar([p + (i * bar_width) for p in positions], grouped[mode], bar_width, label=mode)
-
-    ax.set_xlabel('Genre')
-    ax.set_ylabel('Frequency')
-    ax.set_title('Frequency of Modes for Each Genre')
-    ax.set_xticks([p + bar_width / 2 for p in positions])
-    ax.set_xticklabels(grouped.index)
-    ax.legend()
-
+    grouped = df.groupby(['genre', 'mode']).size().reset_index(name='frequency')
+    
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x='genre', y='frequency', hue='mode', data=grouped)
+    
+    plt.xlabel('Genre')
+    plt.ylabel('Frequency')
+    plt.title('Frequency of Modes for Each Genre')
     plt.xticks(rotation=90)
     plt.tight_layout()
     plt.show()
@@ -34,57 +25,34 @@ def histogramModes():
 
 # histogram for keys - c,c#....and so on
 def histogramKeys():
-    grouped_key = df.groupby(['genre', 'key']).size().unstack(fill_value=0)
+    grouped_key = df.groupby(['genre', 'key']).size().reset_index(name='frequency')
 
-    fig, ax = plt.subplots(figsize=(10, 6))
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x='genre', y='frequency', hue='key', data=grouped_key)
 
-    total_keys = len(grouped_key.columns)
-    bar_width = 0.8 / total_keys  
-    
-    positions_key = range(len(grouped_key.index))
-
-    
-    for i, key in enumerate(grouped_key.columns):
-        ax.bar([p + (i * bar_width) for p in positions_key], grouped_key[key], bar_width, label=key)
-
-   
-    ax.set_xlabel('Genre')
-    ax.set_ylabel('Frequency')
-    ax.set_title('Frequency of Keys for Each Genre')
-    ax.set_xticks([p + ((total_keys - 1) / 2) * bar_width for p in positions_key])
-    ax.set_xticklabels(grouped_key.index)
-    ax.legend(title='Key')
-
-    # Show plot
+    plt.xlabel('Genre')
+    plt.ylabel('Frequency')
+    plt.title('Frequency of Keys for Each Genre')
     plt.xticks(rotation=90)
     plt.tight_layout()
+    plt.legend(title='Key')
     plt.show()
 
 
 
 # histogram for time signatures
 def histogramTimeSignatures():
-    grouped_time_signature = df.groupby(['genre', 'time_signature']).size().unstack(fill_value=0)
+    grouped_time_signature = df.groupby(['genre', 'time_signature']).size().reset_index(name='frequency')
 
-    fig, ax = plt.subplots(figsize=(10, 6))
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x='genre', y='frequency', hue='time_signature', data=grouped_time_signature)
 
-    total_time_signatures = len(grouped_time_signature.columns)
-    bar_width = 0.8 / total_time_signatures  # this is for spacing between bars
-
-    positions_time_signature = range(len(grouped_time_signature.index))
-
-    for i, time_signature in enumerate(grouped_time_signature.columns):
-        ax.bar([p + (i * bar_width) for p in positions_time_signature], grouped_time_signature[time_signature], bar_width, label=time_signature)
-
-    ax.set_xlabel('Genre')
-    ax.set_ylabel('Frequency')
-    ax.set_title('Frequency of Time Signatures for Each Genre')
-    ax.set_xticks([p + ((total_time_signatures - 1) / 2) * bar_width for p in positions_time_signature])
-    ax.set_xticklabels(grouped_time_signature.index)
-    ax.legend(title='Time Signature')
-
+    plt.xlabel('Genre')
+    plt.ylabel('Frequency')
+    plt.title('Frequency of Time Signatures for Each Genre')
     plt.xticks(rotation=90)
     plt.tight_layout()
+    plt.legend(title='Time Signature')
     plt.show()
 
 
