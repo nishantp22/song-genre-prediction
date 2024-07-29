@@ -16,14 +16,14 @@ y = df['genre']
 label_encoder = LabelEncoder()
 y_encoded = label_encoder.fit_transform(y)
 
-X_train, X_test, y_train, y_test = train_test_split(X, y_encoded, test_size=0.3, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y_encoded, test_size=0.3)
 
 scaler = StandardScaler()           #standardization of features
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
 
-dtc = DecisionTreeClassifier(criterion='entropy',max_depth=20,min_samples_split=20, min_samples_leaf=60,random_state=42)
+dtc = DecisionTreeClassifier(criterion='entropy',max_depth=20)
 dtc.fit(X_train_scaled, y_train)
 
 os.makedirs('models', exist_ok=True)
