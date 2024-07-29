@@ -14,14 +14,14 @@ y = df['genre']
 label_encoder = LabelEncoder()          #encoding the target classses(output)
 y_encoded = label_encoder.fit_transform(y)
 
-X_train, X_test, y_train, y_test = train_test_split(X, y_encoded, test_size=0.3, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y_encoded, test_size=0.3)
 
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
 
-clf = RandomForestClassifier(min_samples_leaf=3,n_estimators=124, random_state=42)
+clf = RandomForestClassifier(n_estimators=124)
 clf.fit(X_train_scaled, y_train)
 
 
